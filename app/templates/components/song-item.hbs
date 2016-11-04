@@ -1,12 +1,33 @@
 <h2>{{song.name}} - {{song.artist.name}}</h2>
 
+<h3>Example with <code>with</code> helper</h3>
+
 <div>
-  Album: {{song.album.name}}
-  <br>
-  Studios:
-  <ul>
-    {{#each song.album.studios as |studio|}}
-      <li>{{studio}}</li>
-    {{/each}}
-  </ul>
+  {{#with song.album as |album|}}
+    Album: {{album.name}}
+    <br>
+    Studios:
+    <ul>
+      {{#each album.studios as |studio|}}
+        <li>{{studio}}</li>
+      {{/each}}
+    </ul>
+  {{/with}}
+</div>
+
+<h3>Example with <code>with</code> and <code>else</code> helper</h3>
+
+<div>
+  {{#with song.album as |album|}}
+    Album: {{album.name}}
+    <br>
+    Studios:
+    <ul>
+      {{#each album.studios as |studio|}}
+        <li>{{studio}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    No information available
+  {{/with}}
 </div>
