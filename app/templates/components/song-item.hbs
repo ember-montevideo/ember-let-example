@@ -1,0 +1,12 @@
+<h2>{{song.name}} - {{song.artist.name}}</h2>
+
+<div>
+  Album: {{song.album.name}}
+  <br>
+  Studios:
+  <ul>
+    {{#each song.album.studios as |studio|}}
+      <li>{{studio}}</li>
+    {{/each}}
+  </ul>
+</div>
