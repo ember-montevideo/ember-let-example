@@ -31,3 +31,32 @@
     No information available
   {{/with}}
 </div>
+
+<h3>Example with <code>let</code> helper block declaration</h3>
+
+<div>
+  {{#let song.album as |album|}}
+    Album: {{album.name}}
+    <br>
+    Studios:
+    <ul>
+      {{#each album.studios as |studio|}}
+        <li>{{studio}}</li>
+      {{/each}}
+    </ul>
+  {{/let}}
+</div>
+
+<h3>Example with <code>let</code> helper inline declaration</h3>
+
+<div>
+  {{let album=song.album}}
+  Album: {{album.name}}
+  <br>
+  Studios:
+  <ul>
+    {{#each album.studios as |studio|}}
+      <li>{{studio}}</li>
+    {{/each}}
+  </ul>
+</div>
